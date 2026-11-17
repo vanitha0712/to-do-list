@@ -1,5 +1,5 @@
 # Ex03 To-Do List using JavaScript
-## Date:
+## Date:17.11.2026
 
 ## AIM
 To create a To-do Application with all features using JavaScript.
@@ -36,9 +36,93 @@ Deploy the website.
 Upload to GitHub Pages for free hosting.
 
 ## PROGRAM
+```
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>To-Do List</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        <h1>My To-Do List</h1>
+
+        <input type="text" id="taskInput"
+        placeholder="Enter your task">
+
+        <button onclick="addTask()">Add Task</button>
+
+        <ul id="taskList"></ul>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
+```
+```
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>To-Do List</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        <h1>My To-Do List</h1>
+
+        <input type="text" id="taskInput"
+        placeholder="Enter your task">
+
+        <button onclick="addTask()">Add Task</button>
+
+        <ul id="taskList"></ul>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
+```
+```
+
+function addTask() {
+    let input = document.getElementById("taskInput");
+    let task = input.value;
+
+    if (task === "") {
+        alert("Please enter a task!");
+        return;
+    }
+
+    let li = document.createElement("li");
+    li.textContent = task;
+
+    let btn = document.createElement("button");
+    btn.textContent = "Delete";
+    btn.className = "delete";
+
+    btn.onclick = function() {
+        li.remove();
+    };
+
+    li.appendChild(btn);
+
+    document.getElementById("taskList")
+    .appendChild(li);
+
+    input.value = "";
+}
+
+```
 
 
 ## OUTPUT
+<img width="1920" height="1080" alt="Screenshot 2026-11-17 172303" src="https://github.com/user-attachments/assets/f531ca41-1ed5-4809-b72f-b0193c8b04f5" />
 
 
 ## RESULT
